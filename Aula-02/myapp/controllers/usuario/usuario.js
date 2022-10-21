@@ -1,15 +1,27 @@
+const usuarios = [
+    {
+        'id': 1,
+        'nome': 'chiquim'
+    },
+    {
+        'id': 2,
+        'nome': 'loirão'
+    }
+]
 function listar(){
-    return 'Listar produto'
+    return JSON.stringify(usuarios);
 }
 
-function criar(){
-    return 'Criar produto'
+function criar(usuario){
+    usuarios.push(usuario);
+    return JSON.stringify(usuarios);
 }
 function atualizar(){
-    return 'Atulizar produto'
+    return 'Atulizar usuario'
 }
-function deletar(){
-    return 'Deletar produto'
+function deletar(usuario_id){
+    let filtrados = usuarios.filter((usu)=> usu.id != usuario_id);
+    return JSON.stringify(filtrados);
 }
 module.exports ={
     listar,

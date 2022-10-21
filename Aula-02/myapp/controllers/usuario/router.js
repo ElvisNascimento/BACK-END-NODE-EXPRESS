@@ -1,16 +1,17 @@
 const express = require('express');
 const route = express.Router();
+const usuario = require('./usuario')
 
 route.get("/usuario", (req, res) => {
-    res.send("Listar produtos");
+    res.send(usuario.listar());
 });
 
 route.post("/usuario", (req, res) => {
-    res.send("Criar usuario");
+    res.send(usuario.criar(req.body));
 });
 
 route.put("/usuario/:id", (req, res) => {
-    res.send("Atualizar usuario");
+    res.send(usuario.atualizar());
 });
 
 route.delete("/usuario", (req, res) => {
@@ -18,7 +19,7 @@ route.delete("/usuario", (req, res) => {
 });
 
 route.delete("/usuario/:id", (req, res) => {
-    res.send(`Deletar usuario id: ${req.params.id}`);
+    res.send(usuario.deletar(req.params.id));
 });
 
 module.exports = route;
