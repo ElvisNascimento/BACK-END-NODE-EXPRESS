@@ -1,20 +1,14 @@
-const produtos = [
-    {
-        'id': 1,
-        'nome': 'produto1'
-    },
-    {
-        'id': 2,
-        'nome': 'produto2'
-    }
-]
-function listar(){
-    return JSON.stringify(produtos);
-}
+let fs = require('fs');
+let produtos = fs.readFileSync('controllers/produto/produtos.json').toString();
 
+function listar(){
+    return produtos;
+}
 function criar(produto){
+    let produtos = JSON.parse(listar());
+    console.log(typeof produtos);
     produtos.push(produto);
-    return JSON.stringify(produtos);
+    return produtos;
 }
 function atualizar(){
     return 'Atulizar produto'
