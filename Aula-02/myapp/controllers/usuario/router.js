@@ -5,6 +5,9 @@ const usuario = require('./usuario')
 route.get("/usuario", (req, res) => {
     res.send(usuario.listar());
 });
+route.get('/usuario/:id', (req, res) =>{
+    res.send(usuario.buscar(req.params.id))
+});
 route.post("/usuario", (req, res) => {
     res.send(usuario.criar(req.body));
 });
@@ -17,4 +20,5 @@ route.delete("/usuario", (req, res) => {
 route.delete("/usuario/:id", (req, res) => {
     res.send(usuario.deletar(req.params.id));
 });
+
 module.exports = route;
