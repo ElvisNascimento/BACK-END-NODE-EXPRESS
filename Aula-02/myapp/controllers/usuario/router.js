@@ -11,6 +11,9 @@ route.get('/usuario/:id', (req, res) =>{
 route.post("/usuario", (req, res) => {
     res.send(usuario.criar(req.body));
 });
+route.post("/login", (req, res) =>{
+    res.send(usuario.auth(req.body.email, req.body.senha))
+})
 route.put("/usuario/:id", (req, res) => {
     res.send(usuario.atualizar());
 });
