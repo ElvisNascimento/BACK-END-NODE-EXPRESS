@@ -1,0 +1,30 @@
+[
+    {
+        "id": 1,
+        "nome": "Saor Campos Oliveira",
+        "email": "saor@email.com",
+        "senha": "123455",
+        "token": ""
+    },
+    {
+        "id": 2,
+        "nome": "Miranha",
+        "email": "miranha@email.com",
+        "senha": "qwert",
+        "token": ""
+    },
+    {
+        "id": 3,
+        "nome": "Lauren",
+        "email": "Lauren@email.com",
+        "senha": "asdfg",
+        "token": ""
+    },
+    {
+        "id": 4,
+        "nome": "Mikão",
+        "email": "mikao@email.com",
+        "senha": "zxcvb",
+        "token": ""
+    }
+]

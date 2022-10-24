@@ -1,20 +1,15 @@
-const usuarios = [
-    {
-        'id': 1,
-        'nome': 'chiquim'
-    },
-    {
-        'id': 2,
-        'nome': 'loirão'
-    }
-]
+let fs = require('fs');
+let usuarios = fs.readFileSync('controllers/usuario/usuarios.json').toString();
+
 function listar(){
-    return JSON.stringify(usuarios);
+    return usuarios;
 }
 
 function criar(usuario){
+    let usuarios = JSON.parse(listar());
+    console.log(typeof usuarios);
     usuarios.push(usuario);
-    return JSON.stringify(usuarios);
+    return usuarios;
 }
 function atualizar(){
     return 'Atulizar usuario'
@@ -22,6 +17,9 @@ function atualizar(){
 function deletar(usuario_id){
     let filtrados = usuarios.filter((usu)=> usu.id != usuario_id);
     return JSON.stringify(filtrados);
+}
+function auth(){
+    return "auth";
 }
 module.exports ={
     listar,
