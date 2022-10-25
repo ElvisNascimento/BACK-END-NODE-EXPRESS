@@ -1,14 +1,14 @@
-let fs = require('fs');
-let produtos = fs.readFileSync('controllers/produto/produtos.json').toString();
+let fs = require('fs'); 
 
 function listar(){
-    return produtos;
+    return JSON.parse(fs.readFileSync('controllers/produto/produtos.json', 'utf-8'));
 }
 function criar(produto){
-    let produtos = JSON.parse(listar());
+    let produtos = listar();
     console.log(typeof produtos);
     produtos.push(produto);
-    return produtos;
+    fs.writeFileSync('controllers/produto/produtos.json',JSON.stringify(produtos))
+    return listar();
 }
 function atualizar(){
     return 'Atulizar produto'
